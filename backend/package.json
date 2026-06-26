@@ -13,7 +13,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "start": "node index.js"
   },
   "peerDependencies": {
     "typescript": "^5"
