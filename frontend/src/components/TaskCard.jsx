@@ -34,23 +34,23 @@ function TaskCard({
   };
 
   const handleDelete = async () => {
-const result = await Swal.fire({
-  title: "Delete Task?",
-  text: "This action cannot be undone.",
-  icon: "warning",
+    const result = await Swal.fire({
+      title: "Delete Task?",
+      text: "This action cannot be undone.",
+      icon: "warning",
 
-  background: "#ffffff",
+      background: "#ffffff",
 
-  confirmButtonColor: "#ef4444",
-  cancelButtonColor: "#3b82f6",
+      confirmButtonColor: "#ef4444",
+      cancelButtonColor: "#3b82f6",
 
-  confirmButtonText: "Yes, Delete",
-  cancelButtonText: "Cancel",
+      confirmButtonText: "Yes, Delete",
+      cancelButtonText: "Cancel",
 
-  showCancelButton: true,
+      showCancelButton: true,
 
-  reverseButtons: true,
-});
+      reverseButtons: true,
+    });
 
     if (!result.isConfirmed) return;
 
@@ -73,9 +73,11 @@ const result = await Swal.fire({
 
       <div className="flex justify-between items-start gap-4">
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
+          <h3 className="text-xl font-semibold text-gray-800 break-all">
+            {title}
+          </h3>
 
-          <p className="text-gray-500 mt-2">{description}</p>
+          <p className="text-gray-500 mt-2 break-all">{description}</p>
         </div>
 
         <div className="flex gap-2">
