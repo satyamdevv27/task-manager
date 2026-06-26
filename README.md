@@ -1,49 +1,69 @@
-# 📋 Task Manager Application
+# 📋 Task Manager
 
-A full-stack Task Manager application built with **React**, **Express.js**, and **MongoDB**. The application allows users to create, update, delete, filter, and manage tasks with a clean and responsive user interface.
+A full-stack **Task Manager** application built with **React, Express.js, and MongoDB**. The application allows users to create, update, delete, and filter tasks through a clean, responsive interface.
 
 ---
 
-## 🚀 Tech Stack
+# 🌐 Live Demo
 
-### Frontend
-- React (Vite)
-- Tailwind CSS
-- Axios
-- React Hot Toast
-- SweetAlert2
+### 🚀 Frontend
 
-### Backend
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Express Validator
+https://YOUR-VERCEL-URL.vercel.app
 
-### Testing
-- Vitest
-- Supertest
+### 🔗 Backend API
+
+https://task-manager-hvig.onrender.com
+
+### 📂 GitHub Repository
+
+https://github.com/satyamdevv27/task-manager
+
+---
+
+# 🚀 Tech Stack
+
+## Frontend
+
+* React (Vite)
+* Tailwind CSS
+* Axios
+* React Hot Toast
+* SweetAlert2
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+* Express Validator
+
+## Testing
+
+* Vitest
+* Supertest
 
 ---
 
 # ✨ Features
 
-- Create a new task
-- View all tasks
-- Update existing tasks
-- Delete tasks with confirmation dialog
-- Filter tasks by status
-- Form validation
-- Toast notifications
-- Responsive UI
-- API testing with Vitest & Supertest
+* Create Tasks
+* View All Tasks
+* Update Existing Tasks
+* Delete Tasks with Confirmation Dialog
+* Filter Tasks by Status
+* Form Validation
+* Responsive UI
+* Toast Notifications
+* RESTful API
+* Backend API Testing
 
 ---
 
 # 📂 Project Structure
 
 ```
-task_app
+task-manager
 │
 ├── backend
 │   ├── config
@@ -58,64 +78,44 @@ task_app
 │
 ├── frontend
 │   ├── src
-│   │   ├── components
-│   │   ├── services
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   └── package.json
+│   ├── public
+│   ├── package.json
+│   └── vite.config.js
 │
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-# 🛠 Installation
+# ⚙️ Installation
 
-## 1. Clone Repository
+## Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/satyamdevv27/task-manager.git
 ```
 
 ---
 
-## 2. Install Backend Dependencies
+# Backend Setup
 
 ```bash
 cd backend
 npm install
 ```
 
-or
-
-```bash
-bun install
-```
-
----
-
-## 3. Create Environment Variables
-
 Create a `.env` file inside the backend folder.
 
 ```env
 PORT=5000
-
 MONGO_URI=your_mongodb_connection_string
 ```
 
----
-
-## 4. Start Backend
+Run Backend
 
 ```bash
 npm run dev
-```
-
-or
-
-```bash
-bun run dev
 ```
 
 Backend runs on
@@ -126,25 +126,11 @@ http://localhost:5000
 
 ---
 
-## 5. Install Frontend Dependencies
+# Frontend Setup
 
 ```bash
 cd frontend
-
 npm install
-```
-
-or
-
-```bash
-bun install
-```
-
----
-
-## 6. Start Frontend
-
-```bash
 npm run dev
 ```
 
@@ -156,76 +142,105 @@ http://localhost:5173
 
 ---
 
+# ⚠️ Important Configuration
+
+The deployed frontend is configured to use the Render backend.
+
+If you want to run the project locally, update the API base URL inside:
+
+```
+frontend/src/services/taskApi.js
+```
+
+### Production
+
+```javascript
+baseURL: "https://task-manager-hvig.onrender.com/api/tasks"
+```
+
+### Local Development
+
+```javascript
+baseURL: "http://localhost:5000/api/tasks"
+```
+
+After changing the base URL, start both the backend and frontend locally.
+
+---
+
 # 🧪 Running Tests
 
-Backend tests are written using **Vitest** and **Supertest**.
+Backend API tests are written using **Vitest** and **Supertest**.
 
-Run tests using:
+Run:
 
 ```bash
 cd backend
-
 npm test
 ```
 
 Tests Covered:
 
-- GET /api/tasks
-- POST /api/tasks
-- Validation for invalid task creation
+* GET /api/tasks
+* POST /api/tasks
+* Validation for invalid task creation
 
 ---
 
 # 📌 API Endpoints
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| GET | /api/tasks | Get all tasks |
-| GET | /api/tasks/:id | Get single task |
-| POST | /api/tasks | Create task |
-| PUT | /api/tasks/:id | Update task |
-| DELETE | /api/tasks/:id | Delete task |
+| Method | Endpoint       | Description     |
+| ------ | -------------- | --------------- |
+| GET    | /api/tasks     | Get all tasks   |
+| GET    | /api/tasks/:id | Get single task |
+| POST   | /api/tasks     | Create task     |
+| PUT    | /api/tasks/:id | Update task     |
+| DELETE | /api/tasks/:id | Delete task     |
 
 ---
 
-# 🎨 Design Decisions
+# 🎯 Design Decisions
 
-- Used React functional components and Hooks for clean state management.
-- Tailwind CSS was chosen for fast and responsive UI development.
-- Backend follows a layered architecture (Routes → Controller → Model).
-- Express Validator is used for request validation.
-- SweetAlert2 provides a better confirmation experience before deleting tasks.
-- React Hot Toast is used for success and error notifications.
-- Vitest and Supertest were used to test API endpoints.
-
----
-
-# ⚠ Known Limitations
-
-- No authentication or user accounts.
-- Pagination is not implemented.
-- Search functionality is not available.
-- Tasks are not categorized.
+* Component-based React architecture using functional components and Hooks.
+* RESTful API design using Express.js.
+* MongoDB Atlas with Mongoose for database management.
+* Axios used for centralized API requests.
+* Express Validator used for request validation.
+* Tailwind CSS for a clean and responsive UI.
+* SweetAlert2 for delete confirmation dialogs.
+* React Hot Toast for success and error notifications.
+* Backend API tested using Vitest and Supertest.
 
 ---
 
-# 🔮 Future Improvements
+# Known Limitations
 
-Given more time, I would implement:
+* No authentication or authorization.
+* No pagination.
+* No search functionality.
+* No due dates or reminders.
+* No drag-and-drop task management.
 
-- User Authentication (JWT)
-- Task Search
-- Pagination
-- Drag & Drop task management
-- Due dates & reminders
-- Dark Mode
-- Task categories
-- Docker support
-- CI/CD pipeline
-- Deployment on Vercel and Render
+---
+
+# Future Improvements
+
+* JWT Authentication
+* User Accounts
+* Search Tasks
+* Pagination
+* Task Categories
+* Due Dates & Reminders
+* Drag & Drop Task Board
+* Dark Mode
+* Docker Support
+* CI/CD Pipeline
 
 ---
 
 # 👨‍💻 Author
 
 **Satyam Verma**
+
+GitHub:
+https://github.com/satyamdevv27
