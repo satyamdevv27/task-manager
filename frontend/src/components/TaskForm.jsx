@@ -47,8 +47,28 @@ function TaskForm({ fetchTasks, selectedTask, setSelectedTask }) {
 
       fetchTasks();
     } catch (error) {
-      toast.error(error.response?.data?.message || "Something went wrong");
-    } finally {
+
+  console.log(error.response.data);
+
+  if (error.response?.data?.errors?.length > 0) {
+
+    toast.error(error.response.data.errors[0].msg);
+
+  }
+
+  else if (error.response?.data?.message) {
+
+    toast.error(error.response.data.message);
+
+  }
+
+  else {
+
+    toast.error("Something went wrong");
+
+  }
+
+}finally {
       setLoading(false);
     }
   };
@@ -72,7 +92,7 @@ function TaskForm({ fetchTasks, selectedTask, setSelectedTask }) {
     <div
       className="bg-white rounded-xl shadow p-6"
       ref={formRef}
-    //   id={`task-${_id}`}
+    
     >
       <h2 className="text-2xl font-semibold mb-6">
         {selectedTask ? "✏️ Edit Task" : "➕ Create Task"}
