@@ -8,7 +8,7 @@ A full-stack **Task Manager** application built with **React, Express.js, and Mo
 
 ### 🚀 Frontend
 
-https://YOUR-VERCEL-URL.vercel.app
+https://altios-assignment.vercel.app/
 
 ### 🔗 Backend API
 
